@@ -24,13 +24,13 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore progetto/ConsoleApp/ConsoleApp.sln
+      run: dotnet restore Progetto/ConsoleApp1/ConsoleApp1.sln
 
     - name: Build solution
-      run: dotnet build progetto/ConsoleApp/ConsoleApp.sln --configuration ${{ matrix.configuration }} --no-restore
+      run: dotnet build Progetto/ConsoleApp1/ConsoleApp1.sln --configuration ${{ matrix.configuration }} --no-restore
 
     - name: Run tests
-      run: dotnet test progetto/ConsoleApp/ConsoleApp.sln --configuration ${{ matrix.configuration }} --no-build
+      run: dotnet test Progetto/ConsoleApp1/ConsoleApp1.sln --configuration ${{ matrix.configuration }} --no-build
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
